@@ -1,4 +1,3 @@
-const px2rem = require('postcss-px2rem')
 module.exports = {
   mode: 'universal',
   // 规则配置在/.eslintrc.js:
