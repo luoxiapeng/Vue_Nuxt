@@ -1,0 +1,58 @@
+/* 图片多倍图*/
+@mixin bg-image($url) {
+  background-image: url($url + "@2x.png");
+  @media (-webkit-min-device-pixel-ratio:3),(min-device-pixel-ratio:3){
+    background-image: url($url + "@3x.png")
+  }
+}
+
+/*文本格式化，超出范围，显示省略号*/
+@mixin text-overflow($width:100%,$display:block) {
+  width: $width;
+  display: $display;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* 清除浮动 */
+@mixin clearfix {
+  &:after {
+    clear: both;
+    content: '.';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+  *height: 1%;
+}
+
+/*弹性盒子居中（传入null不设置该属性）*/
+@mixin flex-center($direction:row,$justify:center,$align:center,$flex-wrap: null) {
+  display: -webkit-flex;
+  display: flex;
+  @if ($direction!=null) {
+    flex-direction: $direction;
+  }
+  @if ($justify!=null) {
+    justify-content: $justify;
+  }
+  @if ($align!=null) {
+    align-items: $align;
+  }
+  @if ($flex-wrap != null) {
+    flex-wrap: $flex-wrap;
+  }
+
+}
+
+@mixin  red{
+  background-color: #000;
+}
+
+/* 文本阴影 */
+@mixin text-show($h-shadow:0px, $v-shadow:0px, $blur:10px, $color:rgba(0,180,255,0.7)) {
+  text-shadow: $h-shadow $v-shadow $blur $color;
+}
