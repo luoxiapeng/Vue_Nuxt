@@ -8,10 +8,6 @@ module.exports = {
     node: true,
     baseUrl: process.env.BASE_URL || 'http://localhost:3000'
   },
-  modules: [
-    '@nuxtjs/toast', // 配置轻提示
-    ['@nuxtjs/dotenv', { filename: '.env.prod' }] // 指定打包时使用的dotenv
-  ],
   toast: { // toast模块的配置
     position: 'top-center',
     duration: 2000
@@ -69,7 +65,9 @@ module.exports = {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/toast', // 配置轻提示
+    ['@nuxtjs/dotenv', { filename: '.env.prod' }] // 指定打包时使用的dotenv
   ],
   /*
   ** Axios module configuration
