@@ -18,11 +18,14 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/toast": "^3.3.0",
     "cross-env": "^5.2.0",
     "dotenv": "^8.2.0",
     "koa": "^2.6.2",
-    "nuxt": "^2.0.0"
+    "node-sass": "^4.13.0",
+    "nuxt": "^2.0.0",
+    "sass-loader": "^8.0.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",

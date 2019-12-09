@@ -67,8 +67,17 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/toast', // 配置轻提示
+    '@nuxtjs/style-resources',
     ['@nuxtjs/dotenv', { filename: '.env.prod' }] // 指定打包时使用的dotenv
   ],
+  styleResources: {
+    scss: [
+      './assets/scss/common.scss',
+      './assets/scss/mixin.scss',
+      './assets/scss/variables.scss'
+    ]
+    // sass: ...
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
