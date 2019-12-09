@@ -1,6 +1,27 @@
 
 module.exports = {
   mode: 'universal',
+  // 规则配置在/.eslintrc.js:
+  root: true,
+  env: {
+    browser: true,
+    node: true,
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  },
+  modules: [
+    ['@nuxtjs/dotenv', { filename: '.env.prod' }] // 指定打包时使用的dotenv
+  ],
+  parserOptions: {
+    parser: 'babel-eslint'
+  },
+  extends: [
+    '@nuxtjs', // 该规则对应这个依赖： @nuxtjs/eslint-config
+    'plugin:nuxt/recommended'
+  ],
+  // add your custom rules here
+  rules: {
+    'nuxt/no-cjs-in-config': 'off'
+  },
   /*
   ** Headers of the page
   */
@@ -59,6 +80,15 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+      // Run ESLint on save 开启ESlint校验（根据环境）
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
     }
   }
 }
