@@ -3,6 +3,7 @@ module.exports = {
   mode: 'universal',
   // 规则配置在/.eslintrc.js:
   root: true,
+  // 配置Typescript
   env: {
     browser: true,
     node: true,
@@ -58,7 +59,8 @@ module.exports = {
   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxt/typescript-build'
     // Doc: https://github.com/nuxt-community/stylelint-module
     // '@nuxtjs/stylelint-module'
   ],
@@ -90,6 +92,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    vendor: ['external_library'],
     /*
     ** You can extend webpack config here
     */

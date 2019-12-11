@@ -28,12 +28,16 @@
   </div>
 </template>
 
-<script>
+<script lang ='ts'>
 import Logo from '~/components/Logo.vue'
 
 export default {
   components: {
     Logo
+  },
+  created () {
+    const a:string = '1111'
+    console.log(a)
   }
 }
 </script>
