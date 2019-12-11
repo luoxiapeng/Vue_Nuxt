@@ -49,7 +49,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/route'
+    '~/plugins/route',
+    { src: '~/plugins/vconsole', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules

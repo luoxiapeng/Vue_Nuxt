@@ -26,7 +26,8 @@
     "nuxt": "^2.0.0",
     "postcss-px2rem": "^0.3.0",
     "node-sass": "^4.13.0",
-    "sass-loader": "^8.0.0"
+    "sass-loader": "^8.0.0",
+    "vconsole": "^3.3.4"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
