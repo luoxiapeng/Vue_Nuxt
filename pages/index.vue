@@ -30,7 +30,7 @@
 
 <script lang ='ts'>
 import Logo from '~/components/Logo.vue'
-
+import * as serviceApi from '@/api/system'
 export default {
   components: {
     Logo
@@ -40,6 +40,12 @@ export default {
     console.log(a)
   },
   mounted () {
+    serviceApi.getHome({}).then((res:any) => {
+      console.log(res)
+    })
+    serviceApi.getHome2({}, '/api/douban').then((res:any) => {
+      console.log(res)
+    })
   }
 }
 </script>
