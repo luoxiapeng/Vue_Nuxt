@@ -50,7 +50,6 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~plugins/**',
     '~/plugins/route',
     { src: '~/plugins/vconsole', ssr: false }
   ],
@@ -87,7 +86,7 @@ module.exports = {
   */
   axios: {
     proxy: true,
-    baseURL: 'http://localhost:8000/api',
+    baseURL: 'http://localhost:8001/api',
     // prefix: '/api', // it not work
     credentials: true,
     retry: { retries: 3 }

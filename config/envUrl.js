@@ -17,7 +17,8 @@ export function getWayUrl () {
   // development,production
   const nodeEnv = process.env.NODE_ENV
   // nodeEnv为production并且stage不存在默认为生产环境
-  if (nodeEnv === 'production' && !stage) {
+  console.log('3333', nodeEnv)
+  if (nodeEnv === 'production') {
     if (process.env.ENV_DEV === 'prod') {
       // production 生产环境
       stage = 'prod'
@@ -31,7 +32,7 @@ export function getWayUrl () {
       // dev 开发环境
       stage = 'dev'
     }
-  } else if (nodeEnv === 'development' && !stage) {
+  } else if (nodeEnv === 'development') {
     stage = 'dev'
   } else {
     // stage不存在默认为本地开发环境
