@@ -87,6 +87,18 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    proxy: true,
+    baseURL: 'http://localhost:8001/api',
+    // prefix: '/api', // it not work
+    credentials: true,
+    retry: { retries: 3 }
+  },
+  proxy: {
+    '/api/douban': {
+      target: 'https://api.douban.com/v2/book/search',
+      changeOrigin: true,
+      pathRewrite: { '^/api': '' }
+    }
   },
   /*
   ** Build configuration

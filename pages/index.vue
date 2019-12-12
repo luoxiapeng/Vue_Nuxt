@@ -38,6 +38,8 @@ export default {
   created () {
     const a:string = '1111'
     console.log(a)
+  },
+  mounted () {
   }
 }
 </script>
