@@ -30,10 +30,18 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
-
+import * as serviceApi from '@/api/system'
 export default {
   components: {
     Logo
+  },
+  mounted () {
+    serviceApi.getHome().then((res) => {
+      console.log(res)
+    })
+    serviceApi.getHome2({}, '/api/douban').then((res) => {
+      console.log(res)
+    })
   }
 }
 </script>
