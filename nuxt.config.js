@@ -2,6 +2,7 @@ module.exports = {
   mode: 'universal',
   // 规则配置在/.eslintrc.js:
   root: true,
+  // 配置Typescript
   env: {
     browser: true,
     node: true,
@@ -57,7 +58,8 @@ module.exports = {
   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxt/typescript-build'
     // Doc: https://github.com/nuxt-community/stylelint-module
     // '@nuxtjs/stylelint-module'
   ],
@@ -84,11 +86,24 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    proxy: true,
+    baseURL: 'http://localhost:8001/api',
+    // prefix: '/api', // it not work
+    credentials: true,
+    retry: { retries: 3 }
+  },
+  proxy: {
+    '/api/douban': {
+      target: 'https://api.douban.com/v2/book/search',
+      changeOrigin: true,
+      pathRewrite: { '^/api': '' }
+    }
   },
   /*
   ** Build configuration
   */
   build: {
+    vendor: ['external_library'],
     /*
     ** You can extend webpack config here
     */
