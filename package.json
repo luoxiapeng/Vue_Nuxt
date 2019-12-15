@@ -47,5 +47,11 @@
     "nodemon": "^1.18.9",
     "stylelint": "^10.1.0",
     "vue-jest": "^4.0.0-0"
+  },
+  "eslintConfig":{
+    "rules": {
+        "indent": "off",
+        "no-console": "off"
+    }
   }
 }

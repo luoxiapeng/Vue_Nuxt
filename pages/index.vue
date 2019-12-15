@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 <template>
   <div class="container">
     <div>
